@@ -1,58 +1,79 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sigmafrog 隱私權政策 · Privacy Policy</title>
-<style>
-  :root { color-scheme: light dark; --fg:#1b1d1f; --muted:#5f6670; --bg:#fbfbf9; --accent:#2f7d4f; }
-  @media (prefers-color-scheme: dark) { :root { --fg:#ecedee; --muted:#9aa1a9; --bg:#121314; --accent:#6cc28f; } }
-  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.7 -apple-system, "PingFang TC", "Noto Sans TC", system-ui, sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:64px 24px; }
-  h1 { font-size:32px; margin:0 0 4px; }
-  .date { color:var(--muted); margin:0 0 32px; }
-  h2 { font-size:18px; margin:32px 0 8px; }
-  a { color:var(--accent); }
-  .en { color:var(--muted); }
-</style>
+<title>Sigmafrog Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main>
-  <h1>Sigmafrog 隱私權政策</h1>
-  <p class="date">Privacy Policy · 生效日 Effective: 2026-11-18</p>
+<body class="doc">
+<header class="bar">
+  <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Sigmafrog</a>
+  <nav><a href="index.html">Home</a><a href="privacy.html" aria-current="page">Privacy</a></nav>
+</header>
 
-  <h2>1. 適用範圍 · Scope</h2>
-  <p>本政策說明 Sigmafrog（macOS 應用程式及其命令列工具，以下稱「本軟體」）如何處理你的 Google 使用者資料。</p>
-  <p class="en">This policy explains how Sigmafrog (the macOS app and its command-line tool, “the Software”) handles your Google user data.</p>
+<main class="prose">
+<h1>Privacy Policy</h1>
+<p class="meta">Effective date: November 19, 2026 · Publisher: Sigma Color Grading</p>
 
-  <h2>2. 存取的資料 · Data accessed</h2>
-  <p>經你授權後，本軟體透過 Google Drive API 存取：你指定的檔案與資料夾的名稱、大小、修改時間、MD5 等中繼資料，以及檔案內容。下載功能只要求唯讀權限；命令列上傳工具僅在你明確執行時，將你指定的本機檔案上傳到你指定的雲端資料夾。</p>
-  <p class="en">With your authorization, the Software uses the Google Drive API to access metadata (name, size, modified time, MD5) and content of the files and folders you specify. The download feature requests read-only access; the command-line upload tool uploads only the local files you specify to the Drive folder you specify, and only when you run it.</p>
+<p class="lead">Sigmafrog is a macOS app that downloads Google Drive files and folders you choose to your Mac. It runs entirely on your computer. Sigma Color Grading does not operate any server that receives your Google data, and we never see your files.</p>
 
-  <h2>3. 使用方式 · How data is used</h2>
-  <p>資料只用於你要求的動作：列出、下載、驗證或上傳檔案。本軟體不刪除你雲端硬碟中的任何檔案。</p>
-  <p class="en">Data is used only to perform the actions you request: listing, downloading, verifying or uploading files. The Software does not delete any file in your Google Drive.</p>
+<h2>1. Google user data we access</h2>
+<p>When you sign in with Google, Sigmafrog asks for one permission:</p>
+<ul>
+  <li><strong>See and download your Google Drive files</strong> (<code>https://www.googleapis.com/auth/drive.readonly</code>). Used to let you browse your Google Drive (My Drive, Shared with me, shared drives, Recent and Starred), to read the names, sizes, folder structure and checksums of the files and folders you open or add by link, and to download the ones you choose.</li>
+</ul>
+<p>Sigmafrog never creates, edits, moves, shares or deletes anything in your Google Drive.</p>
 
-  <h2>4. 儲存與安全 · Storage and security</h2>
-  <p>本軟體完全在你的電腦上執行。登入憑證以 AES-256-GCM 加密存放在你的電腦，加密金鑰存於 macOS 鑰匙圈。下載與上傳紀錄只存在你的電腦。開發者沒有伺服器，不會收到、收集或保存你的任何 Google 資料。</p>
-  <p class="en">The Software runs entirely on your computer. OAuth tokens are encrypted with AES-256-GCM and stored on your computer, with the key kept in the macOS Keychain. Transfer records stay on your computer. The developer operates no servers and never receives, collects or stores any of your Google data.</p>
+<h2>2. How we use it</h2>
+<p>Google user data is used only to provide the features you see in the app:</p>
+<ul>
+  <li>Showing your Google Drive files and folders after you sign in, and the files and folders behind a link you paste or drag in.</li>
+  <li>Downloading the items you choose to the folder you pick on your Mac, keeping the original folder structure.</li>
+  <li>Checking each downloaded file against Google Drive's file size and, where Drive provides one, its MD5 checksum, and showing you the result. Google Docs, Sheets and Slides files have no checksum and are not downloaded.</li>
+</ul>
 
-  <h2>5. 分享 · Sharing</h2>
-  <p>本軟體不出售、出租或分享你的 Google 使用者資料給任何第三方，也不用於廣告或訓練人工智慧模型。</p>
-  <p class="en">The Software does not sell, rent or share your Google user data with any third party, and does not use it for advertising or to train AI models.</p>
+<h2>3. Where data is stored</h2>
+<ul>
+  <li><strong>Downloaded files</strong> are saved only to the location you choose on your Mac.</li>
+  <li><strong>Sign-in tokens</strong> are stored on your Mac, encrypted with a key kept in your macOS Keychain.</li>
+  <li><strong>Download queue, history and added links</strong> (Drive file IDs, names, sizes, checksums, destination paths, progress) are stored in Sigmafrog's app data folder on your Mac so you can manage and resume downloads. If a history file is damaged, a backup copy is kept in the same folder.</li>
+  <li><strong>Drive file lists you browse</strong> are kept in memory only while Sigmafrog is open and are never written to disk.</li>
+  <li><strong>Partial downloads</strong> are kept as temporary files in your destination folder while a download is in progress, and are removed when it completes.</li>
+</ul>
+<p>None of this data is sent to Sigma Color Grading or to any third party. Sigmafrog connects only to Google's servers to sign you in and download your files. Internally, the app runs a helper process that listens only on your own Mac (127.0.0.1) and cannot be reached from the network.</p>
 
-  <h2>6. Google API 使用者資料政策 · Google API Services User Data Policy</h2>
-  <p>本軟體對 Google API 所取得資訊的使用與傳輸，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>，包括其中的「有限使用」（Limited Use）規定。</p>
-  <p class="en">Sigmafrog’s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<h2>4. Retention</h2>
+<p>Sign-in tokens are kept until you sign out. Signing out deletes them from your Mac and asks Google to revoke Sigmafrog's access. If you revoke access from your Google Account instead, the stored tokens stop working; signing out then deletes them.</p>
+<p>Download history, added links and backups are kept until you choose <strong>Clear All Data</strong> in Sigmafrog. Deleting the app alone does not remove its data folder; use Clear All Data first, or delete <code>~/Library/Application Support/Sigmafrog</code>. Downloaded files remain wherever you saved them until you delete them. We hold no copy of any of this data.</p>
 
-  <h2>7. 撤銷與刪除 · Revoking access and deleting data</h2>
-  <p>你可以隨時在 <a href="https://myaccount.google.com/permissions">Google 帳戶權限頁面</a> 撤銷本軟體的存取權。在本軟體中中斷連線，或刪除 <code>~/Library/Application Support/Sigmafrog</code> 資料夾，即可移除電腦上的登入憑證與紀錄。</p>
-  <p class="en">You can revoke access at any time on your <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>. Disconnecting in the app, or deleting the <code>~/Library/Application Support/Sigmafrog</code> folder, removes the tokens and records from your computer.</p>
+<h2>5. Sharing and transfers</h2>
+<p>We do not sell, share, or transfer Google user data. We do not use it for advertising, and we do not use it to develop, improve or train artificial-intelligence or machine-learning models. No person reads your Google data; we cannot, because it never leaves your Mac.</p>
 
-  <h2>8. 聯絡 · Contact</h2>
-  <p>Sigma Color Grading · <a href="mailto:a241980241980@gmail.com">a241980241980@gmail.com</a></p>
+<h2 id="limited-use">6. Google API Services User Data Policy</h2>
+<p class="callout">Sigmafrog's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
-  <p><a href="index.html">← Sigmafrog</a></p>
+<h2>7. Your controls and deletion</h2>
+<ul>
+  <li><strong>Sign out</strong> in Sigmafrog to delete the stored sign-in tokens and revoke Sigmafrog's access with Google.</li>
+  <li><strong>Revoke access</strong> at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+  <li><strong>Clear All Data</strong> in Sigmafrog to delete the download queue, history, added links, backups and sign-in tokens from your Mac.</li>
+  <li>Files you downloaded are yours; delete them in Finder whenever you like.</li>
+</ul>
+
+<h2>8. Security</h2>
+<p>All connections to Google use HTTPS. Stored tokens are encrypted with a key held in the macOS Keychain. Because Sigmafrog has no server of its own, there is no copy of your data held by us that could be exposed.</p>
+
+<h2>9. Children</h2>
+<p>Sigmafrog is not directed to children under 13 and does not knowingly collect their data.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, we will update this page and the effective date above. We will not use Google user data in any new way without first asking for your consent.</p>
+
+<h2>11. Contact</h2>
+<p>Questions about privacy: <a href="mailto:a241980241980@gmail.com">a241980241980@gmail.com</a></p>
 </main>
+
+<footer class="foot">© 2026 Sigma Color Grading · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a></footer>
 </body>
 </html>
