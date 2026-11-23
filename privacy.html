@@ -14,7 +14,7 @@
 
 <main class="prose">
 <h1>Privacy Policy</h1>
-<p class="meta">Effective date: November 19, 2026 · Publisher: Sigma Color Grading</p>
+<p class="meta">Effective date: November 24, 2026 · Publisher: Sigma Color Grading</p>
 
 <p class="lead">Sigmafrog is a macOS app that downloads Google Drive files and folders you choose to your Mac. It runs entirely on your computer. Sigma Color Grading does not operate any server that receives your Google data, and we never see your files.</p>
 
@@ -30,21 +30,21 @@
 <ul>
   <li>Showing your Google Drive files and folders after you sign in, and the files and folders behind a link you paste or drag in.</li>
   <li>Downloading the items you choose to the folder you pick on your Mac, keeping the original folder structure.</li>
-  <li>Checking each downloaded file against Google Drive's file size and, where Drive provides one, its MD5 checksum, and showing you the result. Google Docs, Sheets and Slides files have no checksum and are not downloaded.</li>
+  <li>Checking that each downloaded file is complete. For every download you choose how: by file type (the default), while downloading, by reading the file back from your disk after it is saved, or by size only. Verification compares the file with the size and, where Drive provides one, the MD5 checksum that Google Drive reports, and the app shows you the result for each file. Google Docs, Sheets and Slides files have no checksum and are not downloaded.</li>
 </ul>
 
 <h2>3. Where data is stored</h2>
 <ul>
   <li><strong>Downloaded files</strong> are saved only to the location you choose on your Mac.</li>
   <li><strong>Sign-in tokens</strong> are stored on your Mac, encrypted with a key kept in your macOS Keychain.</li>
-  <li><strong>Download queue, history and added links</strong> (Drive file IDs, names, sizes, checksums, destination paths, progress) are stored in Sigmafrog's app data folder on your Mac so you can manage and resume downloads. If a history file is damaged, a backup copy is kept in the same folder.</li>
+  <li><strong>Download queue, history and added links</strong> (Drive file IDs, names, sizes, checksums, destination paths, progress, the verification option you chose and each file's verification result) are stored in Sigmafrog's app data folder on your Mac so you can manage and resume downloads. If a history file is damaged, a backup copy is kept in the same folder.</li>
   <li><strong>Drive file lists you browse</strong> are kept in memory only while Sigmafrog is open and are never written to disk.</li>
-  <li><strong>Partial downloads</strong> are kept as temporary files in your destination folder while a download is in progress, and are removed when it completes.</li>
+  <li><strong>Partial downloads</strong> are kept as temporary files in your destination folder while a download is in progress or paused, so it can resume. They are removed when the download completes, when you stop a download and choose to delete them, or when you clear the job or use Clear All Data.</li>
 </ul>
 <p>None of this data is sent to Sigma Color Grading or to any third party. Sigmafrog connects only to Google's servers to sign you in and download your files. Internally, the app runs a helper process that listens only on your own Mac (127.0.0.1) and cannot be reached from the network.</p>
 
 <h2>4. Retention</h2>
-<p>Sign-in tokens are kept until you sign out. Signing out deletes them from your Mac and asks Google to revoke Sigmafrog's access. If you revoke access from your Google Account instead, the stored tokens stop working; signing out then deletes them.</p>
+<p>Sign-in tokens are kept until you sign out. Signing out deletes them from your Mac and asks Google to revoke Sigmafrog's access. If you revoke access from your Google Account instead, the stored tokens stop working; signing out then deletes them. If sign-in for your version of Sigmafrog is disabled (for example, when a beta version ends), Sigmafrog deletes the stored tokens automatically the next time it tries to use them.</p>
 <p>Download history, added links and backups are kept until you choose <strong>Clear All Data</strong> in Sigmafrog. Deleting the app alone does not remove its data folder; use Clear All Data first, or delete <code>~/Library/Application Support/Sigmafrog</code>. Downloaded files remain wherever you saved them until you delete them. We hold no copy of any of this data.</p>
 
 <h2>5. Sharing and transfers</h2>
